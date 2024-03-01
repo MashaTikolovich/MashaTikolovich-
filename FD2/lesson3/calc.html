@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="calc">
+        <div class="line">
+            <button class="button" onclick="getNum(1)">1</button>
+            <button class="button" onclick="getNum(2)">2</button>
+            <button class="button" onclick="getNum(3)">3</button>
+        </div>
+        <div class="line">
+            <button class="button" onclick="getNum(4)">4</button>
+            <button class="button" onclick="getNum (5)">5</button>
+            <button class="button" onclick="getNum(6)">6</button>
+        </div>
+        <div class="line">
+            <button class="button" onclick="getNum(7)">7</button>
+            <button class="button" onclick="getNum(8)">8</button>
+            <button class="button" onclick="getNum(9)">9</button>
+        </div>
+        <div class="line">
+            <button class="button" onclick="getSing('+')">+</button>
+            <button class="button">0</button>
+            <button class="button" onclick="getSing('/')">/</button>
+        </div>
+        <div class="line">
+            <button class="button" onclick="getSing('-')">-</button>
+            <button class="button" onclick="calc()">=</button>
+            <button class="button" onclick="getSing('*')">*</button>
+        </div>
+    </div>
+
+    <script>
+        let x = null, y = null, sing = null;
+        function getNum(num) {
+            if (x === null) {
+                x = num;
+            } else {
+                y = num;
+            }
+        }
+
+        function getSing(param) {
+            sing = param;
+        }
+
+        function calc() {
+            switch (sing) {
+                case "+":
+                    console.log(`${x} + ${y} = ${x + y}`);
+                    break;
+                case "-":
+                    console.log(`${x} - ${y} = ${x - y}`);
+                    break;
+                case "/":
+                    console.log(`${x} / ${y} = ${x / y}`);
+                    break;
+                case "*":
+                    console.log(`${x} * ${y} = ${x * y}`);
+                    break;
+            }
+
+
+        }
+
+    </script>
+</body>
+
+</html>
